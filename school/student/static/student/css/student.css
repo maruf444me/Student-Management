@@ -1,0 +1,65 @@
+/* ========================================= */
+/*      Css For Student Base Page */
+/* content-70=Top Thake 70px margin */
+/* ========================================= */
+/* Margin For Top Fixed */
+.content-70{
+    margin-top: 70px;
+}
+
+/* For Logo */
+.logo{
+	height: 35px;
+	width: 35px;
+}
+.logo:hover{
+	height: 40px;
+	width: 40px;
+}
+
+/* For body */
+body {
+    background: linear-gradient(to right, #845EC2, #2C73D2, #0081CF, #0089BA, #008E9B, #008F7A);
+}
+
+/* For Navbar */
+.bg-dark{
+    background: linear-gradient(to right, #008F7A, #00C9A7, #008F7A, #008F7A, #0081CF, #f0f18e);
+
+}
+/* Nvbar Hover Effect */
+.navbar ul li:hover {
+	background: linear-gradient(to right, #008F7A,#008F7A, #008F7A);
+}
+
+/* ================== End =================== */
+/* ========================================= */
+/*      Css For Student Ragistration and login Page */
+/* content-70=Top Thake 70px margin */
+/* ========================================= */
+.col-sm-8 .card{
+	 background: linear-gradient(to right, #008F7A,#008F7A, #008F7A);
+}
+/* ================== End =================== */
+
+
+/* ========================================= */
+/*      Css For Student Dahbord Page */
+/* content-70=Top Thake 70px margin */
+/* ========================================= */
+
+.col-sm-2> .border_height {
+	height: 100vh;
+}
+.content-60{
+	margin-top: 50px;
+}
+/* ================== End =================== */
+
+
+/* ========================================= */
+/*      Css For Student Profile Page */
+/* content-70=Top Thake 70px margin */
+/* ========================================= */
+
+/* ================== End =================== */

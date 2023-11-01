@@ -1,0 +1,38 @@
+{% extends 'account/account_base.html' %} {% load static %}{% block title %}Student-Profile Page{% endblock %}
+
+{% block content %}
+<div class="container content-70">
+    <div class="row justify-content-center">
+		<div class="col-sm-8">
+			<!-- For Error Message Handle -->
+			<div class="card text-white">
+				<h3 class="text-center p"> Student Profile Edit </h3>
+				<hr class="border border-danger" />
+                               
+				<!-- Student Adding Form -->
+				<div class="card-body shadow card_body">
+					<form action="" method="post" enctype="multipart/form-data" novalidate> 
+						{% csrf_token %}
+						<div class="container mt-2">
+							<div class="row">
+                                <!-- None Field Error -->
+                                {{ form.non_field_errors }}
+                                {% for fm in form %}
+                                    <p>{{fm.label_tag}}  {{fm}}  {{fm.error}}</p>
+                                {% endfor %}
+                                    
+								<div class="col-sm-8">
+									<input class="btn btn-primary" type="submit" value="Save" />
+								</div>
+								<div class="col-sm-4">
+									<a class="btn btn-danger" href="{% url 'student_dashbord' %}">Cancle</a>
+								</div>
+							</div>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}

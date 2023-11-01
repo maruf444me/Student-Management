@@ -1,0 +1,9 @@
+.card {
+    background: linear-gradient(to left, #2e5c7a, #39708a, #278071);
+    color: #f0f0f0da;
+}
+
+body{
+    margin-top: 90px;
+    margin-bottom: 15px;
+}

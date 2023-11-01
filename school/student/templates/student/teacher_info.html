@@ -1,0 +1,53 @@
+{% extends 'student/student_base.html' %} {% load static %} {% block title %} Teacher-Details Page {% endblock %}
+{% block style %}
+    <style>
+        .btn{
+            background-color: #A7D397;
+            color: black;
+        }
+    </style>
+{% endblock style %}
+{% block content %}
+<div class="container mt-5 ">
+    <div class="row justify-content-center content-70">
+        <div class="col-sm-8 content-60">
+            <div class="card text-white">
+                <h3 class="text-center"> Teacher Contact Information </h3>
+                <hr class="border border-danger">
+                <div class="card-body shadow card_body">
+                    {% if teacher_info %}
+                    <table class="table table-striped table-hover text-white">
+                        <thead>
+                            <tr>
+                                <th scope="col">Id</th>
+                                <th scope="col">First Name</th>
+                                <th scope="col">Last Name</th>
+                                <th scope="col">Department </th>
+                                <th scope="col">Phone</th>
+                                <th scope="col">Email</th>
+                            </tr>
+                        </thead>
+                        {% for info in teacher_info %}
+                            <tr>
+                                <th scope="row">{{info.id}}</th>
+                                <td>{{info.first_name}}</td>
+                                <td>{{info.last_name}}</td>
+                                <td>{{info.department}}</td>
+                                <td>{{info.roll}}</td>
+                                <td>{{info.email}}</td>
+                            </tr>
+                            {% endfor %}
+                    </table>
+                    {% else %}
+                        <h6 class="text-center alert-danger p-2">No Record Found</h6>
+                    {% endif %}
+                    <div>
+                        <a class="btn btn-primary" href="{% url 'student_dashbord' %}">Back</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    
+{% endblock %}

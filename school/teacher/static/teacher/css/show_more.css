@@ -1,0 +1,50 @@
+.mt {
+	margin-top: 40px;
+}
+
+.col_8 {
+	margin-top: 60px;
+}
+
+.max_hight {
+	height: 100vh;
+}
+
+.stu_img img {
+	width: 100px;
+	height: 100px;
+	border-radius: 50px;
+}
+
+.nav> .side_hover:hover{
+	background-color: #447483;
+	color: #F1EFEF;
+	width: 160px;
+	
+}
+.nav> .side_hover{
+	color: #04364A;
+	border-radius: 4px;
+}
+.nav> form> .side_hover:hover{
+	background-color:#447483;
+	color: #F1EFEF;
+	width: 140px;
+	font-weight: bold;
+	border-radius: 4px;
+}
+.nav> form> .side_hover{
+	color:  #04364A;
+}
+.nav> form> .input{
+	color:  #fa2323;
+}
+
+/* Sty For Teacher Dashbord.html */
+nav div ul li:hover{
+	background-color: #447483;
+	color: #F1EFEF;
+	width: 180px;
+}
+
+

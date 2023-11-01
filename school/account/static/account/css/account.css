@@ -1,0 +1,41 @@
+/* For Base Page */
+.content-70{
+    margin-top: 70px;
+}
+
+body {
+	background: linear-gradient(to right, #5D4583, #4FFBDF, #00C2A8, #008B74);
+}
+
+/* For Nav Logo Style */
+.nav_logo img {
+	height: 35px;
+	width: 35px;
+}
+.search{
+    background-color: #A7D397;
+    color: #555843;
+}
+.search:hover {
+    color: white;
+	background-color: #1c9292;
+}
+.navbar ul li:hover {
+	background: linear-gradient(to left, #33678a, #419197, #78D6C6);
+}
+
+.bg-dark{
+    background: linear-gradient(to left, #B0A8B9, #00604F, #009480);
+}
+
+.logo{
+	width: 35px;
+	height: 35px;
+	
+}
+
+
+/* Css For Registration Form */
+.card{
+	background: linear-gradient(to left, #B0A8B9, #00604F, #009480);
+}

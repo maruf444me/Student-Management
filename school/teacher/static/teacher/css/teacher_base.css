@@ -1,0 +1,30 @@
+body {
+	background: linear-gradient(to left, #b867aa, #b37edf, #5aafd6);
+}
+
+/* For Nav Logo Style */
+.nav_logo img {
+	height: 35px;
+	width: 35px;
+}
+.search{
+    background-color: #A7D397;
+    color: #555843;
+}
+.search:hover {
+    color: white;
+	background-color: #1c9292;
+}
+.navbar ul li:hover {
+	background: linear-gradient(to left, #33678a, #419197, #78D6C6);
+}
+
+.bg-dark{
+    background: linear-gradient(to left, #3f6b2a, #4f3f6d, #37793d);
+}
+
+.logo{
+	width: 35px;
+	height: 35px;
+	
+}

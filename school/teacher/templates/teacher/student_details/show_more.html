@@ -1,0 +1,43 @@
+{% extends 'teacher/teacher_base.html' %} {% load static %}{% block title %} Student-More-Details Page{% endblock %} {% block css %} <link rel="stylesheet" href="{% static 'teacher/css/show_more.css' %}" /> {% endblock %} {% block content %}
+<div class="container">
+	<div class="conatiner-fuild mt-5 mt">
+        
+     
+		<div class="row">
+			<div class="col-sm-2 text-white">
+				<div class="border-end border-warning max_hight">
+					<div class="mt stu_img">
+						<img src="{{stu_info.image.url}}" alt="Student Image" />
+                        <h5 class="mt-3">{{stu_info.first_name}} {{stu_info.last_name}}</h5>
+					</div>
+                    <!-- For Side Navbar -->
+					<div class="nav flex-column">
+						<a  class="fa-solid fa-house nav-link mt side_hover" href="{% url 'teacher_home' %}">home</a>
+						<!-- Student Update and Delete -->
+						<form class="mt-2" action="{% url 'delete_student_data' stu_info.id %}" method="post" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <a class="nav-link side_hover" href="{% url 'update_student_data' stu_info.id %}">Changed Details</a>
+                            <input class="btn btn-link side_hover input" type="submit" value="Delete Student" />
+                        </form>
+					</div>
+				</div>
+			</div>
+
+            <div class="col-sm-8 col_8 text-white">
+                <h1 class="text-center">Full Details Of {{stu_info.first_name}} {{stu_info.last_name}} </h1>
+                <hr class="border border-dark">
+                <div class="col_8 text-dark">
+                    <h6>Department : {{stu_info.department}} </h6>
+                    <h6>Roll : {{stu_info.roll}}</h6>
+                    <h6>City : {{stu_info.city}}</h6>
+                    <h6>Address : {{stu_info.address}}</h6>
+                    <h6>CGPA : {{stu_info.cgpa}}</h6>
+                    <h6>Grade : {{stu_info.grade}}</h6>
+                </div>
+                <a class="btn btn-primary mt-5" href="{% url 'show_student_detail' %}">Back</a>
+            </div>
+		</div>
+
+	</div>
+	{% endblock %}
+</div>

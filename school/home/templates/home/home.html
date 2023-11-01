@@ -1,0 +1,68 @@
+{% extends 'home/base.html' %} {% load static %}{% block title %}Blog-Home Page{% endblock %}  
+
+{% block css %}
+    <style>
+        .content-70{
+            margin-top: 70px;
+        }
+        .card{
+        background: linear-gradient(to right, #b867aa, #b37edf, #5aafd6);
+        }
+        .user{
+            color: #c2d862;
+            font-weight: bold;
+        }
+        .date{
+            color: aliceblue;
+            font-size: 12px;
+        }
+        .post_content{
+            color: black;
+            margin-left: 15px;
+        }
+        .clg_name{
+            background-color: #86A789;
+            padding: 15px;
+            width: 550px;
+            margin-left: 275px;
+            color: white;
+            border-radius: 10px;
+        }
+        .title{
+            color: #FFDFDF;
+        }
+        .position{
+            color: #c2d862;
+            font-weight: bold;
+
+        }
+
+    </style>
+{% endblock %}
+    
+{% block content %}
+<div class="container mt-5 content-70">
+	<div class="row justify-content-center mt-5">
+        <div class="content-70 text-center">
+            <h3 class="clg_name"> Barguna Politechnic Institute</h3>
+        </div>
+        {% for post in post_data %}
+		<div class="col-sm-8 mb-5 ">
+			<div class="card">
+				<div class="card-body">
+					<h5 class="card-title title">{{post.title}}</h5>
+                    <hr class="border border-warning">
+                    <div class="row">
+                        <div class="col-sm-6">
+                            <small class="user">Post by : {{post.user.username}}</small>
+                        </div>
+                    </div> <br>
+					<p class="card-subtitle mb-2 post_content">{{post.content}}</p>
+					<small class="date">{{post.created}}</small>
+				</div>
+			</div>
+		</div>
+        {% endfor %}
+	</div>
+</div>
+{% endblock %}

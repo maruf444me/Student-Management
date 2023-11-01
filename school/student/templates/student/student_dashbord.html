@@ -1,0 +1,101 @@
+{% extends 'student/student_base.html' %} {% load static %} {% block title %} Student-Dashbord Page {% endblock %}
+{% block style %} 
+	<style>
+		.student_img {
+		width: 100px;
+		height: 100px;
+		border-radius: 50px;
+	}
+
+	.dashbord_nav a{
+	color: #DADDB1;
+	}
+	.dashbord_nav a:hover{
+	color: #A7D397;
+	background: linear-gradient(to right, #008F7A,#008F7A, #008F7A);
+	width: 160px;
+	}
+	.dashbord_nav button{
+	color: #DADDB1;
+	}
+	.dashbord_nav button:hover{
+	color: #A7D397;
+	background: linear-gradient(to right, #008F7A,#008F7A, #008F7A);
+	width: 160px;
+	}
+	.dashbord_nav div ul li{
+	color: #DADDB1;
+	background: linear-gradient(to right, #0081CF, #0089BA, #008E9B, #008F7A);
+	}
+	.btn_cl{
+            background-color: #A7D397;
+            color: black;
+        }
+	</style>
+{% endblock %}
+{% block content %}
+    <div class="container content-70">
+       <div class="conatiner-fuild">
+		<div class="row ">
+			<div class="col-sm-2 text-white content-60">
+				<div class="border-end border-warning border_height">
+					<div class="mt">
+						{% if student_profile.profile_image.url %}
+							<img class="student_img" src="{{student_profile.profile_image.url}}" alt="Student Image" />
+						{% endif %}
+						<h5 class="mt-3">@{{request.user.username}}</h5>
+					</div>
+                    <nav class="nav flex-column dashbord_nav">
+                        <a  class="fa-solid fa-house nav-link mt side_hover" href="{% url 'student_home' %}">home</a>
+                        <a class="nav-link side_hover" href="{% url 'stu_result' %}">Result</a>
+                        <a class="nav-link side_hover" href="{% url 'teacher_info' %}">Teacher Information</a>
+						<a class="nav-link" href="{% url 'blog' %}">Add Post</a>
+
+                        <!-- For Settings -->
+                            <button class="btn btn-link border-0 m-0 text-left text-start text-decoration-none side_hover" type="button" data-bs-toggle="collapse" data-bs-target="#settingsMenu">Settings</button>
+                        <!-- Settings Options -->
+                        <div class="collapse" id="settingsMenu">
+                            <ul class="list-group">
+                                <li class="list-group-item"><a class="nav-link" href="{% url 'student_profile' %}">Add Profile Information</a> </li>
+                                <li class="list-group-item"><a class="nav-link" href="{% url 'password_change' %}">Change Password</a></li>
+                            </ul>
+                        </div>
+						 <a class="nav-link side_hover" href="{% url 'user_logout' %}">Logout</a>
+                    </nav>
+				</div>
+			</div> 
+
+			<div class="col-sm-8 col_8 text-white ">
+				<h1 class="text-center">Student Dahbord </h1>
+				<hr class="border border-dark" />
+				<!-- Django Messages Shoing -->
+				{% for message in messages %}
+					<div {% if message.tags %} class="alert alert-{{message.tags}} alert-dismissible fade show" role="alert" {% endif %}>
+						<strong>{{message}}</strong>
+						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+					</div>
+				{% endfor %}
+				<div class="col_8 text-dark content-60">
+					{% if student_profile.first_name and student_profile.last_name %}
+						<h6>Student Name :{{student_profile.first_name}} {{student_profile.last_name}}</h6>
+					{% endif %}
+					<h6>Department : {{user.student.department}}</h6>
+					<h6>Roll : {{user.student.roll}} </h6>
+					<h6>Registration : {{user.student.registration}} </h6>
+                    <h6>Eamil : {{user.email}}</h6>
+					{% if student_profile.phone %}
+						<h6>Phone Number : {{student_profile.phone}} </h6>
+					{% endif %}
+					{% if student_profile.city %}
+						<h6>City : {{student_profile.city}}</h6>
+					{% endif %}
+					{% if student_profile.address %}
+						<h6>Address : {{student_profile.address}}</h6>
+					{% endif %}
+				<a class="btn btn-primary btn_cl mt-5" href="{% url 'user_logout' %}">Logout</a>
+			</div>
+		</div>
+	</div>
+    </div>
+{% endblock %}
+    

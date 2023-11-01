@@ -1,0 +1,49 @@
+{% extends 'account/account_base.html' %} {% load static %} {% block title %} Registration Page {% endblock %} 
+{% block css %}
+<style>
+	.btn_log{
+		background-color: #618264;
+	}
+</style>
+{% endblock %}
+{% block content %}
+<div class="container content-70">
+	<div class="row justify-content-center">
+		<div class="col-sm-8">
+			<div class="card text-white">
+				<h3 class="text-center p">Registration Form</h3>
+				<hr class="border border-danger" />
+				<div class="card-body shadow card_body">
+					<form method="post" novalidate>
+						{% csrf_token %}
+						<div class="container mt-2">
+							<div class="row">
+								<div class="col-sm-12">
+									<!-- Display Non-Field Errors -->
+									{% if form.non_field_errors %}
+									<div class="alert alert-danger" role="alert">{{ form.non_field_errors }}</div>
+									{% endif %}
+
+									<!-- Display Form Fields and Errors -->
+									{% for field in form %}
+									<div class="form-group mt-3">
+										{{ field.label_tag }} {{ field }} {% if field.errors %}
+										<p style="color: #8C3333;"> {{field.errors|striptags }}</p>
+										{% endif %}
+									</div>
+									{% endfor %}
+								</div>
+							</div>
+						</div>
+						<div class="col-sm-8 mt-4">
+							<button type="submit" class="btn btn-primary btn_log">Register</button>
+							<a class="btn btn-primary mx-3 btn_log" href="{% url 'login' %}">Login</a>
+						</div>
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+{% endblock %}
+
